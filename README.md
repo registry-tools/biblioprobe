@@ -1,6 +1,6 @@
 # biblioprobe
 
-A docker-wrapped CLI tool around (bibliothecary)[https://github.com/ecosyste-ms/bibliothecary] that
+A docker-wrapped CLI tool around [bibliothecary](https://github.com/ecosyste-ms/bibliothecary) that
 analyzes a code repository's package information and normalizes certain relevant information,
 documented below. The repository may be complete or contain only package manager files like
 package.json and package-lock.json or pnpm-lock.yaml.
