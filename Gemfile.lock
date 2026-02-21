@@ -1,0 +1,35 @@
+GIT
+  remote: https://github.com/ecosyste-ms/bibliothecary.git
+  revision: fea303a1edde8db1fb7a22f9d472f5ab14a140e0
+  specs:
+    ecosystems-bibliothecary (15.4.0)
+      bundler
+      csv
+      json (~> 2.8)
+      ox (>= 2.8.1)
+      racc
+      tomlrb (~> 2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (4.0.1)
+    csv (3.3.5)
+    json (2.18.1)
+    ox (2.14.23)
+      bigdecimal (>= 3.0)
+    racc (1.8.1)
+    tomlrb (2.0.4)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  ecosystems-bibliothecary!
+
+RUBY VERSION
+   ruby 3.4.3p32
+
+BUNDLED WITH
+   2.6.7
