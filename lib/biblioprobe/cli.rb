@@ -11,7 +11,18 @@ module Biblioprobe
         opts.on("-o", "--output FILE", "Output file (default: stdout)") do |f|
           options[:output] = f
         end
+        opts.on("", "--supported-manifests", "List supported manifest file name patterns") do |f|
+          options[:supported_manifests] = true
+        end
       end.parse!(args)
+
+      if options[:supported_manifests]
+        Bibliothecary.supported_files.each do |ecosystem, patterns|
+          puts ecosystem
+          puts "  #{patterns.join("\n  ")}"
+        end
+        return
+      end
 
       input_dir = args[0] || "."
 
