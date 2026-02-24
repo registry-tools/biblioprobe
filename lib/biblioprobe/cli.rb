@@ -65,6 +65,9 @@ def normalize_manifest(manifest)
   {
     ecosystem: manifest_hash[:ecosystem],
     path: manifest_hash[:path],
+    type: manifest_hash[:type],
+    direct: manifest_hash[:direct],
+    integrity: manifest_hash[:integrity],
     dependencies: dependencies,
     kind: manifest_hash[:kind],
     success: manifest_hash[:success],
