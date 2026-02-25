@@ -32,7 +32,6 @@ RUN bundle install
 
 # Make scripts executable
 RUN chmod +x /usr/src/app/bin/probe.rb
-RUN chmod +x /usr/src/app/scan.sh
 
 # Set entrypoint
-ENTRYPOINT ["/usr/src/app/scan.sh"]
+ENTRYPOINT ["/usr/src/app/bin/probe.rb", "/data"]

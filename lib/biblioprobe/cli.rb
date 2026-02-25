@@ -28,11 +28,12 @@ module Biblioprobe
 
       results = Bibliothecary.analyse(input_dir)
 
-      output = JSON.pretty_generate(
+      output = JSON.dump(
         {
           manifests: results.map do |manifest|
             normalize_manifest(manifest)
-          end
+          end,
+          osv_scanner: run_osv_scanner(input_dir)
         }
       )
 
@@ -41,6 +42,10 @@ module Biblioprobe
       else
         puts output
       end
+    end
+
+    def self.run_osv_scanner(input_dir)
+      JSON.parse(`osv-scanner scan source -r #{input_dir} --format json`)
     end
   end
 end
