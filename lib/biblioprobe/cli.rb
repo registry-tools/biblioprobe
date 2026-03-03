@@ -28,14 +28,17 @@ module Biblioprobe
 
       results = Bibliothecary.analyse(input_dir)
 
-      output = JSON.dump(
-        {
-          manifests: results.map do |manifest|
-            normalize_manifest(manifest)
-          end,
-          osv_scanner: run_osv_scanner(input_dir)
-        }
-      )
+      output = {
+        manifests: results.map do |manifest|
+          normalize_manifest(manifest)
+        end,
+      }
+
+      if results.any?
+        output[:vulnerabilities] = run_osv_scanner(input_dir)
+      end
+
+      output = JSON.dump(output)
 
       if options[:output]
         File.write(options[:output], output)
@@ -70,9 +73,6 @@ def normalize_manifest(manifest)
   {
     ecosystem: manifest_hash[:ecosystem],
     path: manifest_hash[:path],
-    type: manifest_hash[:type],
-    direct: manifest_hash[:direct],
-    integrity: manifest_hash[:integrity],
     dependencies: dependencies,
     kind: manifest_hash[:kind],
     success: manifest_hash[:success],
@@ -84,9 +84,11 @@ def dependency_to_hash(dep)
   hash = {
     name: dep.name,
     requirement: dep.requirement,
-    type: dep.type || "runtime"
+    type: dep.type || "runtime",
   }
 
+  hash[:direct] = dep.direct unless dep.direct.nil?
+  hash[:integrity] = dep.integrity unless dep.integrity.nil?
   hash[:local] = dep.local unless dep.local.nil?
 
   hash

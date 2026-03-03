@@ -14,11 +14,21 @@ GEM
   remote: https://rubygems.org/
   specs:
     bigdecimal (4.0.1)
+    byebug (13.0.0)
+      reline (>= 0.6.0)
     csv (3.3.5)
+    drb (2.2.3)
+    io-console (0.8.2)
     json (2.18.1)
+    minitest (6.0.2)
+      drb (~> 2.0)
+      prism (~> 1.5)
     ox (2.14.23)
       bigdecimal (>= 3.0)
+    prism (1.9.0)
     racc (1.8.1)
+    reline (0.6.3)
+      io-console (~> 0.5)
     tomlrb (2.0.4)
 
 PLATFORMS
@@ -26,7 +36,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  byebug
   ecosystems-bibliothecary!
+  minitest
 
 RUBY VERSION
    ruby 3.4.3p32
