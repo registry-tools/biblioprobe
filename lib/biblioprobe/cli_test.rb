@@ -31,6 +31,7 @@ class TestCLI < Minitest::Test
           assert_equal "runtime", chalk[:type]
         else
           assert_equal "package.json", manifest[:path]
+          assert_equal "audit-cli", manifest[:project_name]
           assert_equal "manifest", manifest[:kind]
           assert_equal true, manifest[:success]
           assert_equal 3, manifest[:dependencies].length

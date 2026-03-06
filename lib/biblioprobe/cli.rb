@@ -71,6 +71,7 @@ def normalize_manifest(manifest)
   end
 
   {
+    project_name: manifest_hash[:project_name],
     ecosystem: manifest_hash[:ecosystem],
     path: manifest_hash[:path],
     dependencies: dependencies,
