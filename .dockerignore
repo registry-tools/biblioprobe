@@ -1,3 +1,6 @@
 Dockerfile
 .github/
+.ruby-lsp/
 .byebug_history
+lib/biblioprobe/fixtures/
+*_test.rb

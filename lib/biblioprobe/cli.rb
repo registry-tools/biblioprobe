@@ -77,7 +77,8 @@ def normalize_manifest(manifest)
     dependencies: dependencies,
     kind: manifest_hash[:kind],
     success: manifest_hash[:success],
-    related_paths: manifest_hash[:related_paths]
+    related_paths: manifest_hash[:related_paths],
+    git_info: manifest_hash[:git_info],
   }
 end
 
@@ -86,6 +87,7 @@ def dependency_to_hash(dep)
     name: dep.name,
     requirement: dep.requirement,
     type: dep.type || "runtime",
+    git_info: dep.git_info,
   }
 
   hash[:direct] = dep.direct unless dep.direct.nil?

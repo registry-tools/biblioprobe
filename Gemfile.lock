@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/registry-tools/bibliothecary.git
-  revision: 1306be9b2126ab045242b861ba61ded4e454cbef
+  revision: 9cc24ea2403d4a65e02846f20d53c698433f9dbc
   specs:
     ecosystems-bibliothecary (15.4.0)
       bundler
@@ -13,13 +13,13 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    bigdecimal (4.0.1)
+    bigdecimal (4.1.0)
     byebug (13.0.0)
       reline (>= 0.6.0)
     csv (3.3.5)
     drb (2.2.3)
     io-console (0.8.2)
-    json (2.18.1)
+    json (2.19.3)
     minitest (6.0.2)
       drb (~> 2.0)
       prism (~> 1.5)
@@ -41,7 +41,7 @@ DEPENDENCIES
   minitest
 
 RUBY VERSION
-   ruby 3.4.3p32
+   ruby 4.0.2p0
 
 BUNDLED WITH
    2.6.7

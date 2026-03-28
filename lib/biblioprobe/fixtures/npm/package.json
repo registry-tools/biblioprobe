@@ -6,6 +6,9 @@
   "bin": {
     "audit-cli": "./bin/audit.js"
   },
+  "repository": {
+    "url": "https://github.com/registry-tools-test/audit-cli.git"
+  },
   "scripts": {
     "start": "node bin/audit.js",
     "test": "node --test src/**/*.test.js"
@@ -13,6 +16,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^12.1.0",
-    "winston": "^3.17.0"
+    "winston": "^3.17.0",
+    "underscore": "github:jashkenas/underscore"
   }
 }
